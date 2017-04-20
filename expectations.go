@@ -1,9 +1,7 @@
 package goexpectations
 
-import "testing"
-
 type expectation struct {
-	context *testing.T
+	testContext
 }
 
 type expectationBool struct {
