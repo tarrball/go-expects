@@ -18,11 +18,11 @@ func TestToBeIntMatchPasses(t *testing.T) {
 func TestToBeIntMismatchFails(t *testing.T) {
 	actual, expected := 1, 2
 	mock := getMock(t)
-	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-	expectation := expectationInt{expected, expectation{mock}}
+	expectation := expectationInt{actual, expectation{mock}}
 
-	expectation.toBe(actual)
+	expectation.toBe(expected)
 }
 
 func TestToBeInt8MatchPasses(t *testing.T) {
@@ -36,7 +36,7 @@ func TestToBeInt8MatchPasses(t *testing.T) {
 func TestToBeInt8MismatchFails(t *testing.T) {
 	actual, expected := int8(1), int8(2)
 	mock := getMock(t)
-	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
 	expectation := expectationInt8{actual, expectation{mock}}
 
@@ -51,15 +51,15 @@ func TestToBeInt16MatchPasses(t *testing.T) {
 	expectation.toBe(expected)
 }
 
-// func TestToBeInt16MismatchFails(t *testing.T) {
-// 	actual, expected := int16(1), int16(2)
-// 	mock := getMock(t)
-// 	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+func TestToBeInt16MismatchFails(t *testing.T) {
+	actual, expected := int16(1), int16(2)
+	mock := getMock(t)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-// 	expectation := expectationInt16{actual, expectation{mock}}
+	expectation := expectationInt16{actual, expectation{mock}}
 
-// 	expectation.toBe(expected)
-// }
+	expectation.toBe(expected)
+}
 
 func TestToBeInt32MatchPasses(t *testing.T) {
 	actual, expected := int32(1), int32(1)
@@ -69,15 +69,15 @@ func TestToBeInt32MatchPasses(t *testing.T) {
 	expectation.toBe(expected)
 }
 
-// func TestToBeInt32MismatchFails(t *testing.T) {
-// 	actual, expected := int32(1), int32(2)
-// 	mock := getMock(t)
-// 	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+func TestToBeInt32MismatchFails(t *testing.T) {
+	actual, expected := int32(1), int32(2)
+	mock := getMock(t)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-// 	expectation := expectationInt32{actual, expectation{mock}}
+	expectation := expectationInt32{actual, expectation{mock}}
 
-// 	expectation.toBe(expected)
-// }
+	expectation.toBe(expected)
+}
 
 func TestToBeInt64MatchPasses(t *testing.T) {
 	actual, expected := int64(1), int64(1)
@@ -90,11 +90,11 @@ func TestToBeInt64MatchPasses(t *testing.T) {
 func TestToBeInt64MismatchFails(t *testing.T) {
 	actual, expected := int64(1), int64(2)
 	mock := getMock(t)
-	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
 	expectation := expectationInt64{expected, expectation{mock}}
 
-	expectation.toBe(actual)
+	expectation.toBe(expected)
 }
 
 func TestToBeStringMatchPasses(t *testing.T) {
@@ -108,7 +108,7 @@ func TestToBeStringMatchPasses(t *testing.T) {
 func TestToBeStringMismatchFails(t *testing.T) {
 	actual, expected := "abc", "123"
 	mock := getMock(t)
-	mock.EXPECT().Errorf("Expected '%s' to equal '%s'", expected, actual)
+	mock.EXPECT().Errorf("Expected '%s' to equal '%s'", actual, expected)
 
 	expectation := expectationString{actual, expectation{mock}}
 
@@ -123,15 +123,15 @@ func TestToBeUintMatchPasses(t *testing.T) {
 	expectation.toBe(expected)
 }
 
-// func TestToBeUintMismatchFails(t *testing.T) {
-// 	actual, expected := uint(1), uint(2)
-// 	mock := getMock(t)
-// 	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+func TestToBeUintMismatchFails(t *testing.T) {
+	actual, expected := uint(1), uint(2)
+	mock := getMock(t)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-// 	expectation := expectationUint{actual, expectation{mock}}
+	expectation := expectationUint{actual, expectation{mock}}
 
-// 	expectation.toBe(expected)
-// }
+	expectation.toBe(expected)
+}
 
 func TestToBeUint8MatchPasses(t *testing.T) {
 	actual, expected := uint8(1), uint8(1)
@@ -141,15 +141,15 @@ func TestToBeUint8MatchPasses(t *testing.T) {
 	expectation.toBe(expected)
 }
 
-// func TestToBeUint8MismatchFails(t *testing.T) {
-// 	actual, expected := uint8(1), uint8(2)
-// 	mock := getMock(t)
-// 	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+func TestToBeUint8MismatchFails(t *testing.T) {
+	actual, expected := uint8(1), uint8(2)
+	mock := getMock(t)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-// 	expectation := expectationUint8{actual, expectation{mock}}
+	expectation := expectationUint8{actual, expectation{mock}}
 
-// 	expectation.toBe(expected)
-// }
+	expectation.toBe(expected)
+}
 
 func TestToBeUint16MatchPasses(t *testing.T) {
 	actual, expected := uint16(1), uint16(1)
@@ -159,15 +159,15 @@ func TestToBeUint16MatchPasses(t *testing.T) {
 	expectation.toBe(expected)
 }
 
-// func TestToBeUint16MismatchFails(t *testing.T) {
-// 	actual, expected := uint16(1), uint16(2)
-// 	mock := getMock(t)
-// 	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
+func TestToBeUint16MismatchFails(t *testing.T) {
+	actual, expected := uint16(1), uint16(2)
+	mock := getMock(t)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-// 	expectation := expectationUint16{actual, expectation{mock}}
+	expectation := expectationUint16{actual, expectation{mock}}
 
-// 	expectation.toBe(expected)
-// }
+	expectation.toBe(expected)
+}
 
 func TestToBeUint32MatchPasses(t *testing.T) {
 	actual, expected := uint32(1), uint32(1)
@@ -177,32 +177,32 @@ func TestToBeUint32MatchPasses(t *testing.T) {
 	expectation.toBe(expected)
 }
 
-// func TestToBeUint32MismatchFails(t *testing.T) {
-// 	actual, expected := uint32(1), uint32(2)
-// 	mock := getMock(t)
-// 	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
+func TestToBeUint32MismatchFails(t *testing.T) {
+	actual, expected := uint32(1), uint32(2)
+	mock := getMock(t)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-// 	expectation := expectationUint32{expected, expectation{mock}}
+	expectation := expectationUint32{expected, expectation{mock}}
 
-// 	expectation.toBe(actual)
-// }
+	expectation.toBe(expected)
+}
 
 func TestToBeUint64MatchPasses(t *testing.T) {
 	actual, expected := uint64(1), uint64(1)
 
-	expectation := expectationUint64{expected, expectation{t}}
+	expectation := expectationUint64{actual, expectation{t}}
 
-	expectation.toBe(actual)
+	expectation.toBe(expected)
 }
 
 func TestToBeUint64MismatchFails(t *testing.T) {
 	actual, expected := uint64(1), uint64(2)
 	mock := getMock(t)
-	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", expected, actual)
+	mock.EXPECT().Errorf("Expected '%d' to equal '%d'", actual, expected)
 
-	expectation := expectationUint64{expected, expectation{mock}}
+	expectation := expectationUint64{actual, expectation{mock}}
 
-	expectation.toBe(actual)
+	expectation.toBe(expected)
 }
 
 func getMock(t *testing.T) *mocks.MocktestContext {
