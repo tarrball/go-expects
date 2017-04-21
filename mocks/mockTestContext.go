@@ -4,6 +4,8 @@
 package mock_goexpectations
 
 import (
+	"testing"
+
 	gomock "github.com/golang/mock/gomock"
 )
 
@@ -16,6 +18,12 @@ type MocktestContext struct {
 // Recorder for MocktestContext (not exported)
 type _MocktestContextRecorder struct {
 	mock *MocktestContext
+}
+
+func GetMock(t *testing.T) *MocktestContext {
+	mockCtrl := gomock.NewController(t)
+	defer mockCtrl.Finish()
+	return NewMocktestContext(mockCtrl)
 }
 
 func NewMocktestContext(ctrl *gomock.Controller) *MocktestContext {
