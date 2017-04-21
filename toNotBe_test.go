@@ -91,7 +91,7 @@ func TestToNotBeInt64MatchFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("'%d' should not equal '%d'", actual, expected)
 
-	expectation := expectationInt64{expected, expectation{mock}}
+	expectation := expectationInt64{actual, expectation{mock}}
 
 	expectation.toNotBe(expected)
 }
@@ -181,7 +181,7 @@ func TestToNotBeUint32MatchFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("'%d' should not equal '%d'", actual, expected)
 
-	expectation := expectationUint32{expected, expectation{mock}}
+	expectation := expectationUint32{actual, expectation{mock}}
 
 	expectation.toNotBe(expected)
 }
