@@ -1,4 +1,4 @@
-package goexpectations
+package expectations
 
 func (source expectationInt) toBe(target int) {
 	if source.value != target {

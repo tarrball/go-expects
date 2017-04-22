@@ -1,4 +1,4 @@
-package goexpectations
+package expectations
 
 func (source expectationInt) toBeGreaterThan(target int) {
 	if source.value <= target {

@@ -1,4 +1,4 @@
-package goexpectations
+package expectations
 
 type expectation struct {
 	testContext
@@ -48,6 +48,7 @@ type expectationUint16 struct {
 	value uint16
 	expectation
 }
+
 
 type expectationUint32 struct {
 	value uint32

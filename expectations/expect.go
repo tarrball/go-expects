@@ -1,4 +1,4 @@
-package goexpectations
+package expectations
 
 func expectBool(t testContext, value bool) expectationBool {
 	return expectationBool{value, expectation{t}}

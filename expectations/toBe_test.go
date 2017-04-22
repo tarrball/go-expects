@@ -1,9 +1,9 @@
-package goexpectations
+package expectations
 
 import (
 	"testing"
 
-	mocks "github.com/user/goexpectations/mocks"
+	"github.com/tarrball/goexpectations/mocks"
 )
 
 func TestToBeIntMatchPasses(t *testing.T) {

@@ -1,4 +1,4 @@
-package goexpectations
+package expectations
 
 func (source expectationBool) toBeFalse() {
 	if source.value != false {
