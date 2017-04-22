@@ -48,5 +48,6 @@ And that's it! Pretty sweet, right?
 arrays, slices, maps, (expect.toContain, expect.toNotContain, expect.toBeNil, expect.toNotBeNil, etc)
 
 <br />
+
 # Contact
 <andrew@tarrball.com>
