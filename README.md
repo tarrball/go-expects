@@ -27,18 +27,18 @@ Unfortunately, due to the nature of Go testing as I understand it today, it's ne
 After the `expectation` has the test context, you can use the assertions:
 
     func TestExpectIntToBe3(t *testing.T) {
-	    expects.Int(t, 3).toBe(3)
+	    expects.Int(t, 3).ToBe(3)
     }
     
 Currently, the expectation types `Int`, `Int8`, `Int16`, `Int32`, `Int64`, `Uint`, `Uint8`, `Uint16`, `Uint32`, `Uint64`, `String` may use:
-* `toBe()`
-* `toNotBe()`
-* `toBeGreaterThan()`
-* `toBeLessThan()`
+* `ToBe()`
+* `ToNotBe()`
+* `ToBeGreaterThan()`
+* `ToBeLessThan()`
 
 and `Bool` may use:
-* `toBeTrue()`
-* `toBeFalse()`
+* `ToBeTrue()`
+* `ToBeFalse()`
     
 And that's it! Pretty sweet, right?
 
