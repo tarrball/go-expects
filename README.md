@@ -50,4 +50,5 @@ arrays, slices, maps, (expect.toContain, expect.toNotContain, expect.toBeNil, ex
 <br />
 
 # Contact
+Thoughts? Opinions? Requests? Suggestions?
 <andrew@tarrball.com>
