@@ -42,5 +42,7 @@ and `expectBool' may use:
     
 And that's it! Pretty sweet, right?
 
+<br />
+
 # Coming Soon
 arrays, slices, maps, (expect.toContain, expect.toNotContain, expect.toBeNil, expect.toNotBeNil, etc)
