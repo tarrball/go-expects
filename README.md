@@ -3,7 +3,7 @@ Simple and intuitive test assertions for testing Go.
 
 <br />
 
-# Version 0.0.1
+# Version 0.1.0
 I've created this little assertion package for two reasons:
   * take a personal tour of Go!
   * create an assertion syntax that I like.
