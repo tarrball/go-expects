@@ -1,49 +1,49 @@
-package expectations
+package expects
 
-func expectBool(t testContext, value bool) expectationBool {
-	return expectationBool{value, expectation{t}}
+func Bool(t testContext, value bool) ExpectationBool {
+	return ExpectationBool{value, Expectation{t}}
 }
 
-func expectInt(t testContext, value int) expectationInt {
-	return expectationInt{value, expectation{t}}
+func Int(t testContext, value int) ExpectationInt {
+	return ExpectationInt{value, Expectation{t}}
 }
 
-func expectInt8(t testContext, value int8) expectationInt8 {
-	return expectationInt8{value, expectation{t}}
+func Int8(t testContext, value int8) ExpectationInt8 {
+	return ExpectationInt8{value, Expectation{t}}
 }
 
-func expectInt16(t testContext, value int16) expectationInt16 {
-	return expectationInt16{value, expectation{t}}
+func Int16(t testContext, value int16) ExpectationInt16 {
+	return ExpectationInt16{value, Expectation{t}}
 }
 
-func expectInt32(t testContext, value int32) expectationInt32 {
-	return expectationInt32{value, expectation{t}}
+func Int32(t testContext, value int32) ExpectationInt32 {
+	return ExpectationInt32{value, Expectation{t}}
 }
 
-func expectInt64(t testContext, value int64) expectationInt64 {
-	return expectationInt64{value, expectation{t}}
+func Int64(t testContext, value int64) ExpectationInt64 {
+	return ExpectationInt64{value, Expectation{t}}
 }
 
-func expectString(t testContext, value string) expectationString {
-	return expectationString{value, expectation{t}}
+func String(t testContext, value string) ExpectationString {
+	return ExpectationString{value, Expectation{t}}
 }
 
-func expectUint(t testContext, value uint) expectationUint {
-	return expectationUint{value, expectation{t}}
+func Uint(t testContext, value uint) ExpectationUint {
+	return ExpectationUint{value, Expectation{t}}
 }
 
-func expectUint8(t testContext, value uint8) expectationUint8 {
-	return expectationUint8{value, expectation{t}}
+func Uint8(t testContext, value uint8) ExpectationUint8 {
+	return ExpectationUint8{value, Expectation{t}}
 }
 
-func expectUint16(t testContext, value uint16) expectationUint16 {
-	return expectationUint16{value, expectation{t}}
+func Uint16(t testContext, value uint16) ExpectationUint16 {
+	return ExpectationUint16{value, Expectation{t}}
 }
 
-func expectUint32(t testContext, value uint32) expectationUint32 {
-	return expectationUint32{value, expectation{t}}
+func Uint32(t testContext, value uint32) ExpectationUint32 {
+	return ExpectationUint32{value, Expectation{t}}
 }
 
-func expectUint64(t testContext, value uint64) expectationUint64 {
-	return expectationUint64{value, expectation{t}}
+func Uint64(t testContext, value uint64) ExpectationUint64 {
+	return ExpectationUint64{value, Expectation{t}}
 }

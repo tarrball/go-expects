@@ -1,6 +1,6 @@
-package expectations
+package expects
 
-func (source expectationBool) toBeTrue() {
+func (source ExpectationBool) toBeTrue() {
 	if source.value != true {
 		source.testContext.Errorf("Expected 'false' to be 'true'")
 	}

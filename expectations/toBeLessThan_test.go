@@ -1,15 +1,15 @@
-package expectations
+package expects
 
 import (
 	"testing"
 
-	"github.com/tarrball/goexpectations/mocks"
+	"github.com/tarrball/go-expectations/mocks"
 )
 
 func TestToBeLessThanIntLessPasses(t *testing.T) {
 	actual, expected := 1, 2
 
-	expectation := expectationInt{actual, expectation{t}}
+	expectation := ExpectationInt{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -19,7 +19,7 @@ func TestToBeLessThanIntLessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt{actual, expectation{mock}}
+	expectation := ExpectationInt{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -29,7 +29,7 @@ func TestToBeLessThanIntEqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt{actual, expectation{mock}}
+	expectation := ExpectationInt{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -37,7 +37,7 @@ func TestToBeLessThanIntEqualFails(t *testing.T) {
 func TestToBeLessThanInt8LessPasses(t *testing.T) {
 	actual, expected := int8(1), int8(2)
 
-	expectation := expectationInt8{actual, expectation{t}}
+	expectation := ExpectationInt8{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -47,7 +47,7 @@ func TestToBeLessThanInt8LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt8{actual, expectation{mock}}
+	expectation := ExpectationInt8{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -57,7 +57,7 @@ func TestToBeLessThanInt8EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt8{actual, expectation{mock}}
+	expectation := ExpectationInt8{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -65,7 +65,7 @@ func TestToBeLessThanInt8EqualFails(t *testing.T) {
 func TestToBeLessThanInt16LessPasses(t *testing.T) {
 	actual, expected := int16(1), int16(2)
 
-	expectation := expectationInt16{actual, expectation{t}}
+	expectation := ExpectationInt16{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -75,7 +75,7 @@ func TestToBeLessThanInt16LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt16{actual, expectation{mock}}
+	expectation := ExpectationInt16{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -85,7 +85,7 @@ func TestToBeLessThanInt16EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt16{actual, expectation{mock}}
+	expectation := ExpectationInt16{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -93,7 +93,7 @@ func TestToBeLessThanInt16EqualFails(t *testing.T) {
 func TestToBeLessThanInt32LessPasses(t *testing.T) {
 	actual, expected := int32(1), int32(2)
 
-	expectation := expectationInt32{actual, expectation{t}}
+	expectation := ExpectationInt32{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -103,7 +103,7 @@ func TestToBeLessThanInt32LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt32{actual, expectation{mock}}
+	expectation := ExpectationInt32{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -113,7 +113,7 @@ func TestToBeLessThanInt32EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt32{actual, expectation{mock}}
+	expectation := ExpectationInt32{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -121,7 +121,7 @@ func TestToBeLessThanInt32EqualFails(t *testing.T) {
 func TestToBeLessThanInt64LessPasses(t *testing.T) {
 	actual, expected := int64(1), int64(2)
 
-	expectation := expectationInt64{actual, expectation{t}}
+	expectation := ExpectationInt64{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -131,7 +131,7 @@ func TestToBeLessThanInt64LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt64{actual, expectation{mock}}
+	expectation := ExpectationInt64{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -141,7 +141,7 @@ func TestToBeLessThanInt64EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationInt64{actual, expectation{mock}}
+	expectation := ExpectationInt64{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -149,7 +149,7 @@ func TestToBeLessThanInt64EqualFails(t *testing.T) {
 func TestToBeLessThanStringLessPasses(t *testing.T) {
 	actual, expected := "abc", "def"
 
-	expectation := expectationString{actual, expectation{t}}
+	expectation := ExpectationString{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -159,7 +159,7 @@ func TestToBeLessThanStringLessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%s' to be less than '%s'", actual, expected)
 
-	expectation := expectationString{actual, expectation{mock}}
+	expectation := ExpectationString{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -169,7 +169,7 @@ func TestToBeLessThanStringEqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%s' to be less than '%s'", actual, expected)
 
-	expectation := expectationString{actual, expectation{mock}}
+	expectation := ExpectationString{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -177,7 +177,7 @@ func TestToBeLessThanStringEqualFails(t *testing.T) {
 func TestToBeLessThanUintLessPasses(t *testing.T) {
 	actual, expected := uint(1), uint(2)
 
-	expectation := expectationUint{actual, expectation{t}}
+	expectation := ExpectationUint{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -187,7 +187,7 @@ func TestToBeLessThanUintLessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint{actual, expectation{mock}}
+	expectation := ExpectationUint{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -197,7 +197,7 @@ func TestToBeLessThanUintEqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint{actual, expectation{mock}}
+	expectation := ExpectationUint{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -205,7 +205,7 @@ func TestToBeLessThanUintEqualFails(t *testing.T) {
 func TestToBeLessThanUint8LessPasses(t *testing.T) {
 	actual, expected := uint8(1), uint8(2)
 
-	expectation := expectationUint8{actual, expectation{t}}
+	expectation := ExpectationUint8{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -215,7 +215,7 @@ func TestToBeLessThanUint8LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint8{actual, expectation{mock}}
+	expectation := ExpectationUint8{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -225,7 +225,7 @@ func TestToBeLessThanUint8EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint8{actual, expectation{mock}}
+	expectation := ExpectationUint8{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -233,7 +233,7 @@ func TestToBeLessThanUint8EqualFails(t *testing.T) {
 func TestToBeLessThanUint16LessPasses(t *testing.T) {
 	actual, expected := uint16(1), uint16(2)
 
-	expectation := expectationUint16{actual, expectation{t}}
+	expectation := ExpectationUint16{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -243,7 +243,7 @@ func TestToBeLessThanUint16LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint16{actual, expectation{mock}}
+	expectation := ExpectationUint16{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -253,7 +253,7 @@ func TestToBeLessThanUint16EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint16{actual, expectation{mock}}
+	expectation := ExpectationUint16{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -261,7 +261,7 @@ func TestToBeLessThanUint16EqualFails(t *testing.T) {
 func TestToBeLessThanUint32LessPasses(t *testing.T) {
 	actual, expected := uint32(1), uint32(2)
 
-	expectation := expectationUint32{actual, expectation{t}}
+	expectation := ExpectationUint32{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -271,7 +271,7 @@ func TestToBeLessThanUint32LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint32{actual, expectation{mock}}
+	expectation := ExpectationUint32{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -281,7 +281,7 @@ func TestToBeLessThanUint32EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint32{actual, expectation{mock}}
+	expectation := ExpectationUint32{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -289,7 +289,7 @@ func TestToBeLessThanUint32EqualFails(t *testing.T) {
 func TestToBeLessThanUint64LessPasses(t *testing.T) {
 	actual, expected := uint64(1), uint64(2)
 
-	expectation := expectationUint64{actual, expectation{t}}
+	expectation := ExpectationUint64{actual, Expectation{t}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -299,7 +299,7 @@ func TestToBeLessThanUint64LessFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint64{actual, expectation{mock}}
+	expectation := ExpectationUint64{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }
@@ -309,7 +309,7 @@ func TestToBeLessThanUint64EqualFails(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected '%d' to be less than '%d'", actual, expected)
 
-	expectation := expectationUint64{actual, expectation{mock}}
+	expectation := ExpectationUint64{actual, Expectation{mock}}
 
 	expectation.toBeLessThan(expected)
 }

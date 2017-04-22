@@ -1,66 +1,65 @@
-package expectations
+package expects
 
-type expectation struct {
+type Expectation struct {
 	testContext
 }
 
-type expectationBool struct {
+type ExpectationBool struct {
 	value bool
-	expectation
+	Expectation
 }
 
-type expectationInt struct {
+type ExpectationInt struct {
 	value int
-	expectation
+	Expectation
 }
 
-type expectationInt8 struct {
+type ExpectationInt8 struct {
 	value int8
-	expectation
+	Expectation
 }
 
-type expectationInt16 struct {
+type ExpectationInt16 struct {
 	value int16
-	expectation
+	Expectation
 }
 
-type expectationInt32 struct {
+type ExpectationInt32 struct {
 	value int32
-	expectation
+	Expectation
 }
 
-type expectationInt64 struct {
+type ExpectationInt64 struct {
 	value int64
-	expectation
+	Expectation
 }
 
-type expectationUint struct {
+type ExpectationUint struct {
 	value uint
-	expectation
+	Expectation
 }
 
-type expectationUint8 struct {
+type ExpectationUint8 struct {
 	value uint8
-	expectation
+	Expectation
 }
 
-type expectationUint16 struct {
+type ExpectationUint16 struct {
 	value uint16
-	expectation
+	Expectation
 }
 
-
-type expectationUint32 struct {
+type ExpectationUint32 struct {
 	value uint32
-	expectation
+	Expectation
 }
 
-type expectationUint64 struct {
+type ExpectationUint64 struct {
 	value uint64
-	expectation
+	Expectation
 }
 
-type expectationString struct {
+type ExpectationString struct {
 	value string
-	expectation
+	Expectation
 }
