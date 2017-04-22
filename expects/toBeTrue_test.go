@@ -13,7 +13,7 @@ func TestToBeTrueFailsWithFalse(t *testing.T) {
 
 	expectation := ExpectationBool{actual, Expectation{mock}}
 
-	expectation.toBeTrue()
+	expectation.ToBeTrue()
 }
 
 func TestToBeTruePassesWithTrue(t *testing.T) {
@@ -21,5 +21,5 @@ func TestToBeTruePassesWithTrue(t *testing.T) {
 
 	expectation := ExpectationBool{actual, Expectation{t}}
 
-	expectation.toBeTrue()
+	expectation.ToBeTrue()
 }

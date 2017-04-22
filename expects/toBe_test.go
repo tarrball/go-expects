@@ -11,7 +11,7 @@ func TestToBeIntMatchPasses(t *testing.T) {
 
 	expectation := ExpectationInt{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeIntMismatchFails(t *testing.T) {
@@ -21,7 +21,7 @@ func TestToBeIntMismatchFails(t *testing.T) {
 
 	expectation := ExpectationInt{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt8MatchPasses(t *testing.T) {
@@ -29,7 +29,7 @@ func TestToBeInt8MatchPasses(t *testing.T) {
 
 	expectation := ExpectationInt8{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt8MismatchFails(t *testing.T) {
@@ -39,7 +39,7 @@ func TestToBeInt8MismatchFails(t *testing.T) {
 
 	expectation := ExpectationInt8{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt16MatchPasses(t *testing.T) {
@@ -47,7 +47,7 @@ func TestToBeInt16MatchPasses(t *testing.T) {
 
 	expectation := ExpectationInt16{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt16MismatchFails(t *testing.T) {
@@ -57,7 +57,7 @@ func TestToBeInt16MismatchFails(t *testing.T) {
 
 	expectation := ExpectationInt16{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt32MatchPasses(t *testing.T) {
@@ -65,7 +65,7 @@ func TestToBeInt32MatchPasses(t *testing.T) {
 
 	expectation := ExpectationInt32{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt32MismatchFails(t *testing.T) {
@@ -75,7 +75,7 @@ func TestToBeInt32MismatchFails(t *testing.T) {
 
 	expectation := ExpectationInt32{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt64MatchPasses(t *testing.T) {
@@ -83,7 +83,7 @@ func TestToBeInt64MatchPasses(t *testing.T) {
 
 	expectation := ExpectationInt64{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeInt64MismatchFails(t *testing.T) {
@@ -93,7 +93,7 @@ func TestToBeInt64MismatchFails(t *testing.T) {
 
 	expectation := ExpectationInt64{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeStringMatchPasses(t *testing.T) {
@@ -101,7 +101,7 @@ func TestToBeStringMatchPasses(t *testing.T) {
 
 	expectation := ExpectationString{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeStringMismatchFails(t *testing.T) {
@@ -111,7 +111,7 @@ func TestToBeStringMismatchFails(t *testing.T) {
 
 	expectation := ExpectationString{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUintMatchPasses(t *testing.T) {
@@ -119,7 +119,7 @@ func TestToBeUintMatchPasses(t *testing.T) {
 
 	expectation := ExpectationUint{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUintMismatchFails(t *testing.T) {
@@ -129,7 +129,7 @@ func TestToBeUintMismatchFails(t *testing.T) {
 
 	expectation := ExpectationUint{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint8MatchPasses(t *testing.T) {
@@ -137,7 +137,7 @@ func TestToBeUint8MatchPasses(t *testing.T) {
 
 	expectation := ExpectationUint8{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint8MismatchFails(t *testing.T) {
@@ -147,7 +147,7 @@ func TestToBeUint8MismatchFails(t *testing.T) {
 
 	expectation := ExpectationUint8{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint16MatchPasses(t *testing.T) {
@@ -155,7 +155,7 @@ func TestToBeUint16MatchPasses(t *testing.T) {
 
 	expectation := ExpectationUint16{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint16MismatchFails(t *testing.T) {
@@ -165,7 +165,7 @@ func TestToBeUint16MismatchFails(t *testing.T) {
 
 	expectation := ExpectationUint16{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint32MatchPasses(t *testing.T) {
@@ -173,7 +173,7 @@ func TestToBeUint32MatchPasses(t *testing.T) {
 
 	expectation := ExpectationUint32{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint32MismatchFails(t *testing.T) {
@@ -183,7 +183,7 @@ func TestToBeUint32MismatchFails(t *testing.T) {
 
 	expectation := ExpectationUint32{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint64MatchPasses(t *testing.T) {
@@ -191,7 +191,7 @@ func TestToBeUint64MatchPasses(t *testing.T) {
 
 	expectation := ExpectationUint64{actual, Expectation{t}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }
 
 func TestToBeUint64MismatchFails(t *testing.T) {
@@ -201,5 +201,5 @@ func TestToBeUint64MismatchFails(t *testing.T) {
 
 	expectation := ExpectationUint64{actual, Expectation{mock}}
 
-	expectation.toBe(expected)
+	expectation.ToBe(expected)
 }

@@ -1,6 +1,6 @@
 package expects
 
-func (source ExpectationInt) toBeGreaterThan(target int) {
+func (source ExpectationInt) ToBeGreaterThan(target int) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -8,7 +8,7 @@ func (source ExpectationInt) toBeGreaterThan(target int) {
 	}
 }
 
-func (source ExpectationInt8) toBeGreaterThan(target int8) {
+func (source ExpectationInt8) ToBeGreaterThan(target int8) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -16,7 +16,7 @@ func (source ExpectationInt8) toBeGreaterThan(target int8) {
 	}
 }
 
-func (source ExpectationInt16) toBeGreaterThan(target int16) {
+func (source ExpectationInt16) ToBeGreaterThan(target int16) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -24,7 +24,7 @@ func (source ExpectationInt16) toBeGreaterThan(target int16) {
 	}
 }
 
-func (source ExpectationInt32) toBeGreaterThan(target int32) {
+func (source ExpectationInt32) ToBeGreaterThan(target int32) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -32,7 +32,7 @@ func (source ExpectationInt32) toBeGreaterThan(target int32) {
 	}
 }
 
-func (source ExpectationInt64) toBeGreaterThan(target int64) {
+func (source ExpectationInt64) ToBeGreaterThan(target int64) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -40,7 +40,7 @@ func (source ExpectationInt64) toBeGreaterThan(target int64) {
 	}
 }
 
-func (source ExpectationString) toBeGreaterThan(target string) {
+func (source ExpectationString) ToBeGreaterThan(target string) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%s' to be greater than '%s'",
 			source.value,
@@ -48,7 +48,7 @@ func (source ExpectationString) toBeGreaterThan(target string) {
 	}
 }
 
-func (source ExpectationUint) toBeGreaterThan(target uint) {
+func (source ExpectationUint) ToBeGreaterThan(target uint) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -56,7 +56,7 @@ func (source ExpectationUint) toBeGreaterThan(target uint) {
 	}
 }
 
-func (source ExpectationUint8) toBeGreaterThan(target uint8) {
+func (source ExpectationUint8) ToBeGreaterThan(target uint8) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -64,7 +64,7 @@ func (source ExpectationUint8) toBeGreaterThan(target uint8) {
 	}
 }
 
-func (source ExpectationUint16) toBeGreaterThan(target uint16) {
+func (source ExpectationUint16) ToBeGreaterThan(target uint16) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -72,7 +72,7 @@ func (source ExpectationUint16) toBeGreaterThan(target uint16) {
 	}
 }
 
-func (source ExpectationUint32) toBeGreaterThan(target uint32) {
+func (source ExpectationUint32) ToBeGreaterThan(target uint32) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,
@@ -80,7 +80,7 @@ func (source ExpectationUint32) toBeGreaterThan(target uint32) {
 	}
 }
 
-func (source ExpectationUint64) toBeGreaterThan(target uint64) {
+func (source ExpectationUint64) ToBeGreaterThan(target uint64) {
 	if source.value <= target {
 		source.testContext.Errorf("Expected '%d' to be greater than '%d'",
 			source.value,

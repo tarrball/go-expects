@@ -1,6 +1,6 @@
 package expects
 
-func (source ExpectationInt) toNotBe(target int) {
+func (source ExpectationInt) ToNotBe(target int) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -8,7 +8,7 @@ func (source ExpectationInt) toNotBe(target int) {
 	}
 }
 
-func (source ExpectationInt8) toNotBe(target int8) {
+func (source ExpectationInt8) ToNotBe(target int8) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -16,7 +16,7 @@ func (source ExpectationInt8) toNotBe(target int8) {
 	}
 }
 
-func (source ExpectationInt16) toNotBe(target int16) {
+func (source ExpectationInt16) ToNotBe(target int16) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -24,7 +24,7 @@ func (source ExpectationInt16) toNotBe(target int16) {
 	}
 }
 
-func (source ExpectationInt32) toNotBe(target int32) {
+func (source ExpectationInt32) ToNotBe(target int32) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -32,7 +32,7 @@ func (source ExpectationInt32) toNotBe(target int32) {
 	}
 }
 
-func (source ExpectationInt64) toNotBe(target int64) {
+func (source ExpectationInt64) ToNotBe(target int64) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -40,7 +40,7 @@ func (source ExpectationInt64) toNotBe(target int64) {
 	}
 }
 
-func (source ExpectationString) toNotBe(target string) {
+func (source ExpectationString) ToNotBe(target string) {
 	if source.value == target {
 		source.testContext.Errorf("'%s' should not equal '%s'",
 			source.value,
@@ -48,7 +48,7 @@ func (source ExpectationString) toNotBe(target string) {
 	}
 }
 
-func (source ExpectationUint) toNotBe(target uint) {
+func (source ExpectationUint) ToNotBe(target uint) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -56,7 +56,7 @@ func (source ExpectationUint) toNotBe(target uint) {
 	}
 }
 
-func (source ExpectationUint8) toNotBe(target uint8) {
+func (source ExpectationUint8) ToNotBe(target uint8) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -64,7 +64,7 @@ func (source ExpectationUint8) toNotBe(target uint8) {
 	}
 }
 
-func (source ExpectationUint16) toNotBe(target uint16) {
+func (source ExpectationUint16) ToNotBe(target uint16) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -72,7 +72,7 @@ func (source ExpectationUint16) toNotBe(target uint16) {
 	}
 }
 
-func (source ExpectationUint32) toNotBe(target uint32) {
+func (source ExpectationUint32) ToNotBe(target uint32) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,
@@ -80,7 +80,7 @@ func (source ExpectationUint32) toNotBe(target uint32) {
 	}
 }
 
-func (source ExpectationUint64) toNotBe(target uint64) {
+func (source ExpectationUint64) ToNotBe(target uint64) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
 			source.value,

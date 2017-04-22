@@ -1,6 +1,6 @@
 package expects
 
-func (source ExpectationInt) toBe(target int) {
+func (source ExpectationInt) ToBe(target int) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -8,7 +8,7 @@ func (source ExpectationInt) toBe(target int) {
 	}
 }
 
-func (source ExpectationInt8) toBe(target int8) {
+func (source ExpectationInt8) ToBe(target int8) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -16,7 +16,7 @@ func (source ExpectationInt8) toBe(target int8) {
 	}
 }
 
-func (source ExpectationInt16) toBe(target int16) {
+func (source ExpectationInt16) ToBe(target int16) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -24,7 +24,7 @@ func (source ExpectationInt16) toBe(target int16) {
 	}
 }
 
-func (source ExpectationInt32) toBe(target int32) {
+func (source ExpectationInt32) ToBe(target int32) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -32,7 +32,7 @@ func (source ExpectationInt32) toBe(target int32) {
 	}
 }
 
-func (source ExpectationInt64) toBe(target int64) {
+func (source ExpectationInt64) ToBe(target int64) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -40,7 +40,7 @@ func (source ExpectationInt64) toBe(target int64) {
 	}
 }
 
-func (source ExpectationString) toBe(target string) {
+func (source ExpectationString) ToBe(target string) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%s' to equal '%s'",
 			source.value,
@@ -48,7 +48,7 @@ func (source ExpectationString) toBe(target string) {
 	}
 }
 
-func (source ExpectationUint) toBe(target uint) {
+func (source ExpectationUint) ToBe(target uint) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -56,7 +56,7 @@ func (source ExpectationUint) toBe(target uint) {
 	}
 }
 
-func (source ExpectationUint8) toBe(target uint8) {
+func (source ExpectationUint8) ToBe(target uint8) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -64,7 +64,7 @@ func (source ExpectationUint8) toBe(target uint8) {
 	}
 }
 
-func (source ExpectationUint16) toBe(target uint16) {
+func (source ExpectationUint16) ToBe(target uint16) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -72,7 +72,7 @@ func (source ExpectationUint16) toBe(target uint16) {
 	}
 }
 
-func (source ExpectationUint32) toBe(target uint32) {
+func (source ExpectationUint32) ToBe(target uint32) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
@@ -80,7 +80,7 @@ func (source ExpectationUint32) toBe(target uint32) {
 	}
 }
 
-func (source ExpectationUint64) toBe(target uint64) {
+func (source ExpectationUint64) ToBe(target uint64) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",
 			source.value,
