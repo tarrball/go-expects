@@ -3,7 +3,7 @@ package expects
 import (
 	"testing"
 
-	"github.com/tarrball/go-expectations/mocks"
+	"github.com/tarrball/go-expects/mocks"
 )
 
 func TestToBeGreaterThanIntGreaterPasses(t *testing.T) {
