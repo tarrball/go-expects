@@ -11,7 +11,7 @@ I've created this little assertion package for two reasons:
 <br />
 
 # Installation
-`go get github.com/tarrball/go-expectations`
+`go get github.com/tarrball/go-expects`
 
 <br />
 
