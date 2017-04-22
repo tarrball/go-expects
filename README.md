@@ -36,7 +36,7 @@ Currently, the expectations `expectInt`, `expectInt8`, `expectInt16`, `expectInt
 * `toBeGreaterThan()`
 * `toBeLessThan()`
 
-and `expectBool' may use:
+and `expectBool` may use:
 * `toBeTrue()`
 * `toBeFalse()`
     
