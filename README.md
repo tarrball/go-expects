@@ -1,5 +1,5 @@
-# go-expectations
-Simple and intuitive test assertions for testing Go.
+# go-expects
+Simple and intuitive test assertions for testing Go. You've tried the rest, now try this one.
 
 <br />
 
@@ -21,22 +21,22 @@ It's supposed to be intuitive right? So how important could documentation _reall
 Unfortunately, due to the nature of Go testing as I understand it today, it's necessary to pass the test context into each first call:
 
     func TestExpectIntToBe3(t *testing.T) {
-	    expectInt(t, 3)...
+	    expects.Int(t, 3)...
     }
     
 After the `expectation` has the test context, you can use the assertions:
 
     func TestExpectIntToBe3(t *testing.T) {
-	    expectInt(t, 3).toBe(3)
+	    expects.Int(t, 3).toBe(3)
     }
     
-Currently, the expectations `expectInt`, `expectInt8`, `expectInt16`, `expectInt32`, `expectInt64`, `expectUint`, `expectUint8`, `expectUint16`, `expectUint32`, `expectUint64`, `expectString` may use:
+Currently, the expectation types `Int`, `Int8`, `Int16`, `Int32`, `Int64`, `Uint`, `Uint8`, `Uint16`, `Uint32`, `Uint64`, `String` may use:
 * `toBe()`
 * `toNotBe()`
 * `toBeGreaterThan()`
 * `toBeLessThan()`
 
-and `expectBool` may use:
+and `Bool` may use:
 * `toBeTrue()`
 * `toBeFalse()`
     
