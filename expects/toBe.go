@@ -1,5 +1,21 @@
 package expects
 
+func (source ExpectationFloat) ToBe(target float64) {
+	if source.value != target {
+		source.testContext.Errorf("Expected '%f' to equal '%f'",
+			source.value,
+			target)
+	}
+}
+
+func (source ExpectationFloat32) ToBe(target float32) {
+	if source.value != target {
+		source.testContext.Errorf("Expected '%f' to equal '%f'",
+			source.value,
+			target)
+	}
+}
+
 func (source ExpectationInt) ToBe(target int) {
 	if source.value != target {
 		source.testContext.Errorf("Expected '%d' to equal '%d'",

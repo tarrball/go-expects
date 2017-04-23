@@ -4,6 +4,14 @@ func Bool(t testContext, value bool) ExpectationBool {
 	return ExpectationBool{value, Expectation{t}}
 }
 
+func Float(t testContext, value float64) ExpectationFloat {
+	return ExpectationFloat{value, Expectation{t}}
+}
+
+func Float32(t testContext, value float32) ExpectationFloat32 {
+	return ExpectationFloat32{value, Expectation{t}}
+}
+
 func Int(t testContext, value int) ExpectationInt {
 	return ExpectationInt{value, Expectation{t}}
 }

@@ -1,5 +1,21 @@
 package expects
 
+func (source ExpectationFloat) ToBeLessThan(target float64) {
+	if source.value >= target {
+		source.testContext.Errorf("Expected '%f' to be less than '%f'",
+			source.value,
+			target)
+	}
+}
+
+func (source ExpectationFloat32) ToBeLessThan(target float32) {
+	if source.value >= target {
+		source.testContext.Errorf("Expected '%f' to be less than '%f'",
+			source.value,
+			target)
+	}
+}
+
 func (source ExpectationInt) ToBeLessThan(target int) {
 	if source.value >= target {
 		source.testContext.Errorf("Expected '%d' to be less than '%d'",

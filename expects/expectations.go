@@ -9,6 +9,16 @@ type ExpectationBool struct {
 	Expectation
 }
 
+type ExpectationFloat struct {
+	value float64
+	Expectation
+}
+
+type ExpectationFloat32 struct {
+	value float32
+	Expectation
+}
+
 type ExpectationInt struct {
 	value int
 	Expectation
