@@ -11,6 +11,24 @@ func TestExpectBoolReturnsExpectation(t *testing.T) {
 	}
 }
 
+func TestExpectFloatReturnsExpectation(t *testing.T) {
+	value := 3.14
+	result := Float(t, value)
+
+	if result.testContext != t || result.value != value {
+		t.Fail()
+	}
+}
+
+func TestExpectFloat32ReturnsExpectation(t *testing.T) {
+	value := float32(3.14)
+	result := Float32(t, value)
+
+	if result.testContext != t || result.value != value {
+		t.Fail()
+	}
+}
+
 func TestExpectIntReturnsExpectation(t *testing.T) {
 	value := 1
 	result := Int(t, value)

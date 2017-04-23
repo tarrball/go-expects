@@ -6,6 +6,62 @@ import (
 	"github.com/tarrball/go-expects/mocks"
 )
 
+func TestToBeLessThanFloatLessPasses(t *testing.T) {
+	actual, expected := 1.1, 2.1
+
+	expectation := ExpectationFloat{actual, Expectation{t}}
+
+	expectation.ToBeLessThan(expected)
+}
+
+func TestToBeLessThanFloatLessFails(t *testing.T) {
+	actual, expected := 2.1, float64(1.2)
+	mock := mocks.GetMock(t)
+	mock.EXPECT().Errorf("Expected '%f' to be less than '%f'", actual, expected)
+
+	expectation := ExpectationFloat{actual, Expectation{mock}}
+
+	expectation.ToBeLessThan(expected)
+}
+
+func TestToBeLessThanFloatEqualFails(t *testing.T) {
+	actual, expected := 1.1, 1.1
+	mock := mocks.GetMock(t)
+	mock.EXPECT().Errorf("Expected '%f' to be less than '%f'", actual, expected)
+
+	expectation := ExpectationFloat{actual, Expectation{mock}}
+
+	expectation.ToBeLessThan(expected)
+}
+
+func TestToBeLessThanFloat32LessPasses(t *testing.T) {
+	actual, expected := float32(1.1), float32(2.1)
+
+	expectation := ExpectationFloat32{actual, Expectation{t}}
+
+	expectation.ToBeLessThan(expected)
+}
+
+func TestToBeLessThanFloat32LessFails(t *testing.T) {
+	actual, expected := float32(2.1), float32(1.2)
+	mock := mocks.GetMock(t)
+	mock.EXPECT().Errorf("Expected '%f' to be less than '%f'", actual, expected)
+
+	expectation := ExpectationFloat32{actual, Expectation{mock}}
+
+	expectation.ToBeLessThan(expected)
+}
+
+func TestToBeLessThanFloat32EqualFails(t *testing.T) {
+	actual, expected := float32(1.1), float32(1.1)
+	mock := mocks.GetMock(t)
+	mock.EXPECT().Errorf("Expected '%f' to be less than '%f'", actual, expected)
+
+	expectation := ExpectationFloat32{actual, Expectation{mock}}
+
+	expectation.ToBeLessThan(expected)
+}
+
 func TestToBeLessThanIntLessPasses(t *testing.T) {
 	actual, expected := 1, 2
 
