@@ -1,5 +1,21 @@
 package expects
 
+func (source ExpectationFloat) ToNotBe(target float64) {
+	if source.value == target {
+		source.testContext.Errorf("'%f' should not equal '%f'",
+			source.value,
+			target)
+	}
+}
+
+func (source ExpectationFloat32) ToNotBe(target float32) {
+	if source.value == target {
+		source.testContext.Errorf("'%f' should not equal '%f'",
+			source.value,
+			target)
+	}
+}
+
 func (source ExpectationInt) ToNotBe(target int) {
 	if source.value == target {
 		source.testContext.Errorf("'%d' should not equal '%d'",
