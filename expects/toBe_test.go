@@ -6,6 +6,42 @@ import (
 	"github.com/tarrball/go-expects/mocks"
 )
 
+func TestToBeFloatMatchPasses(t *testing.T) {
+	actual, expected := 3.14, 3.14
+
+	expectation := ExpectationFloat{actual, Expectation{t}}
+
+	expectation.ToBe(expected)
+}
+
+func TestToBeFloatMismatchFails(t *testing.T) {
+	actual, expected := 1.1, 2.2
+	mock := mocks.GetMock(t)
+	mock.EXPECT().Errorf("Expected '%f' to equal '%f'", actual, expected)
+
+	expectation := ExpectationFloat{actual, Expectation{mock}}
+
+	expectation.ToBe(expected)
+}
+
+func TestToBeFloat32MatchPasses(t *testing.T) {
+	actual, expected := float32(3.14), float32(3.14)
+
+	expectation := ExpectationFloat32{actual, Expectation{t}}
+
+	expectation.ToBe(expected)
+}
+
+func TestToBeFloat32MismatchFails(t *testing.T) {
+	actual, expected := float32(1.1), float32(2.2)
+	mock := mocks.GetMock(t)
+	mock.EXPECT().Errorf("Expected '%f' to equal '%f'", actual, expected)
+
+	expectation := ExpectationFloat32{actual, Expectation{mock}}
+
+	expectation.ToBe(expected)
+}
+
 func TestToBeIntMatchPasses(t *testing.T) {
 	actual, expected := 1, 1
 
