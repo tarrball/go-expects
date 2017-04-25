@@ -3,7 +3,7 @@ Simple and intuitive test assertions for testing Go. You've tried the rest, now 
 
 <br />
 
-# Version 0.1.0
+# Version 0.2.0
 I've created this little assertion package for two reasons:
   * take a personal tour of Go!
   * create an assertion syntax that I like.
@@ -37,7 +37,7 @@ After the `expectation` has the test context, you can use the assertions:
     
 And that's it! Pretty sweet, right?
     
-Currently, the expectation types `Int`, `Int8`, `Int16`, `Int32`, `Int64`, `Uint`, `Uint8`, `Uint16`, `Uint32`, `Uint64`, `String` may use:
+Currently, the expectation types `Float`, `Float32`, `Int`, `Int8`, `Int16`, `Int32`, `Int64`, `Uint`, `Uint8`, `Uint16`, `Uint32`, `Uint64`, `String` may use:
 * `ToBe()`
 * `ToNotBe()`
 * `ToBeGreaterThan()`
