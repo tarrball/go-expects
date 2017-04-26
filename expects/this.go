@@ -1,5 +1,14 @@
 package expects
 
+type SUT struct {
+	testContext
+	value interface{}
+}
+
+func This(t testContext, actual interface{}) SUT {
+	return SUT{testContext: t, value: actual}
+}
+
 func Bool(t testContext, value bool) ExpectationBool {
 	return ExpectationBool{value, Expectation{t}}
 }
