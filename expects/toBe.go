@@ -4,6 +4,7 @@ import (
 	"reflect"
 )
 
+// ToBe expects the system under test value to equal the expected value.
 func (actual SUT) ToBe(expected interface{}) {
 	if actual.value == nil && expected == nil {
 		return
@@ -24,116 +25,105 @@ func (actual SUT) ToBe(expected interface{}) {
 	expectedValue := reflect.ValueOf(expected)
 
 	if !expectedType.ConvertibleTo(actualType) || !expectedValue.Type().ConvertibleTo(actualType) {
-		actual.testContext.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
+		conversionFail(actual.testContext, actualType, expectedType)
 	} else if !reflect.DeepEqual(expectedValue.Convert(actualType).Interface(), actual.value) {
-		actual.testContext.Errorf("Expected '%d' to equal '%d'",
+		expectationFail(actual.testContext,
+			actualType,
 			actual.value,
 			expectedValue.Convert(actualType).Interface())
 	}
 }
 
-// func (source ExpectationFloat) ToBe(target float64) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%f' to equal '%f'",
-// 			source.value,
-// 			target)
-// 	}
-// }
+func conversionFail(t testContext, actualType reflect.Type, expectedType reflect.Type) {
+	switch actualType.Kind() {
+	case reflect.Int:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Int8:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Int16:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Int32:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Int64:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Uint:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Uint8:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Uint16:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Uint32:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Uint64:
+		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
+			actualType,
+			expectedType)
+	case reflect.Bool:
+		t.Errorf("Could not convert actual type '%s' to expected type '%s'",
+			actualType,
+			expectedType)
+	case reflect.String:
+		t.Errorf("Could not convert actual type '%s' to expected type '%s'",
+			actualType,
+			expectedType)
+	case reflect.Float32:
+		t.Errorf("Could not convert actual type '%f' to expected type '%f'",
+			actualType,
+			expectedType)
+	case reflect.Float64:
+		t.Errorf("Could not convert actual type '%f' to expected type '%f'",
+			actualType,
+			expectedType)
+	}
+}
 
-// func (source ExpectationFloat32) ToBe(target float32) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%f' to equal '%f'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationInt) ToBe(target int) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationInt8) ToBe(target int8) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationInt16) ToBe(target int16) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationInt32) ToBe(target int32) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationInt64) ToBe(target int64) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationString) ToBe(target string) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%s' to equal '%s'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationUint) ToBe(target uint) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationUint8) ToBe(target uint8) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationUint16) ToBe(target uint16) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationUint32) ToBe(target uint32) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
-
-// func (source ExpectationUint64) ToBe(target uint64) {
-// 	if source.value != target {
-// 		source.testContext.Errorf("Expected '%d' to equal '%d'",
-// 			source.value,
-// 			target)
-// 	}
-// }
+func expectationFail(t testContext, objType reflect.Type, actual interface{}, expected interface{}) {
+	switch objType.Kind() {
+	case reflect.Int:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Int8:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Int16:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Int32:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Int64:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Uint:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Uint8:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Uint16:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Uint32:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Uint64:
+		t.Errorf("Expected '%d' to be '%d'", actual, expected)
+	case reflect.Bool:
+		t.Errorf("Expected '%s' to be '%s'", actual, expected)
+	case reflect.String:
+		t.Errorf("Expected '%s' to be '%s'", actual, expected)
+	case reflect.Float32:
+		t.Errorf("Expected '%f' to be '%f'", actual, expected)
+	case reflect.Float64:
+		t.Errorf("Expected '%f' to be '%f'", actual, expected)
+	}
+}

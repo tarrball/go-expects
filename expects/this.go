@@ -1,10 +1,27 @@
 package expects
 
+// SUT System Under Test contains value and testContext
 type SUT struct {
 	testContext
 	value interface{}
 }
 
+// const tBool string = "bool"
+// const tFloat32 string = "float32"
+// const tFloat64 string = "float64"
+// const tInt string = "int"
+// const tInt8 string = "int8"
+// const tInt16 string = "int16"
+// const tInt32 string = "int32"
+// const tInt64 string = "int64"
+// const tString string = "string"
+// const tUint string = "uint"
+// const tUint8 string = "uint8"
+// const tUint16 string = "uint16"
+// const tUint32 string = "uint32"
+// const tUint64 string = "uint64"
+
+// This takes a testContext and an object to be asserted on
 func This(t testContext, actual interface{}) SUT {
 	return SUT{testContext: t, value: actual}
 }
