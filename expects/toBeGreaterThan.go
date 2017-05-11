@@ -2,7 +2,7 @@ package expects
 
 import "reflect"
 
-// ToBeGreaterThan expects the system under test value to not equal the expected value
+// ToBeGreaterThan expects the system under test value to be greater than the expected value
 func (actual SUT) ToBeGreaterThan(expected interface{}) {
 	if actual.value == nil && expected == nil {
 		actual.testContext.Errorf("Both values were nil")
@@ -67,13 +67,6 @@ func (actual SUT) ToBeGreaterThan(expected interface{}) {
 			actual.value,
 			expectedValue.Convert(actualType).Interface())
 	}
-
-	// if int(expectedValue.Convert(actualType).Interface()) <= int(actual.value) {
-	// 	toNotBeFail(actual.testContext,
-	// 		actualType,
-	// 		actual.value,
-	// 		expectedValue.Convert(actualType).Interface())
-	// }
 }
 
 func toBeGreaterThanFail(t testContext, objType reflect.Type, actual interface{}, expected interface{}) {
