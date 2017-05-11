@@ -1,9 +1,9 @@
-package expects
+package expect
 
 import (
 	"testing"
 
-	"github.com/tarrball/go-expects/mocks"
+	"github.com/tarrball/go-expect/mocks"
 )
 
 func TestToBeLessThanFloatLessPasses(t *testing.T) {
