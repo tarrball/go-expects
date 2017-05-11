@@ -1,105 +1,65 @@
 package expects
 
-func (source ExpectationFloat) ToNotBe(target float64) {
-	if source.value == target {
-		source.testContext.Errorf("'%f' should not equal '%f'",
-			source.value,
-			target)
+import "reflect"
+
+// ToNotBe expects the system under test value to not equal the expected value
+func (actual SUT) ToNotBe(expected interface{}) {
+	if actual.value == nil && expected == nil {
+		actual.testContext.Errorf("Both values were nil")
+		return
+	}
+
+	if actual.value == nil {
+		return
+	}
+
+	if expected == nil {
+		return
+	}
+
+	actualType := reflect.TypeOf(actual.value)
+	expectedType := reflect.TypeOf(expected)
+	expectedValue := reflect.ValueOf(expected)
+
+	if !expectedType.ConvertibleTo(actualType) || !expectedValue.Type().ConvertibleTo(actualType) {
+		ConversionFail(actual.testContext, actualType, expectedType)
+	} else if reflect.DeepEqual(expectedValue.Convert(actualType).Interface(), actual.value) {
+		toNotBeFail(actual.testContext,
+			actualType,
+			actual.value,
+			expectedValue.Convert(actualType).Interface())
 	}
 }
 
-func (source ExpectationFloat32) ToNotBe(target float32) {
-	if source.value == target {
-		source.testContext.Errorf("'%f' should not equal '%f'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationInt) ToNotBe(target int) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationInt8) ToNotBe(target int8) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationInt16) ToNotBe(target int16) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationInt32) ToNotBe(target int32) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationInt64) ToNotBe(target int64) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationString) ToNotBe(target string) {
-	if source.value == target {
-		source.testContext.Errorf("'%s' should not equal '%s'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationUint) ToNotBe(target uint) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationUint8) ToNotBe(target uint8) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationUint16) ToNotBe(target uint16) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationUint32) ToNotBe(target uint32) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
-	}
-}
-
-func (source ExpectationUint64) ToNotBe(target uint64) {
-	if source.value == target {
-		source.testContext.Errorf("'%d' should not equal '%d'",
-			source.value,
-			target)
+func toNotBeFail(t testContext, objType reflect.Type, actual interface{}, expected interface{}) {
+	switch objType.Kind() {
+	case reflect.Int:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Int8:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Int16:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Int32:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Int64:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Uint:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Uint8:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Uint16:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Uint32:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Uint64:
+		t.Errorf("'%d' should not be '%d'", actual, expected)
+	case reflect.Bool:
+		t.Errorf("'%s' should not be '%s'", actual, expected)
+	case reflect.String:
+		t.Errorf("'%s' should not be '%s'", actual, expected)
+	case reflect.Float32:
+		t.Errorf("'%f' should not be '%f'", actual, expected)
+	case reflect.Float64:
+		t.Errorf("'%f' should not be '%f'", actual, expected)
 	}
 }
