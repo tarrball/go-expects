@@ -1,9 +1,9 @@
-package expects
+package expect
 
 import (
 	"testing"
 
-	"github.com/tarrball/go-expects/mocks"
+	"github.com/tarrball/go-expect/mocks"
 )
 
 func TestToBeTrueFailsWithFalse(t *testing.T) {
@@ -11,15 +11,15 @@ func TestToBeTrueFailsWithFalse(t *testing.T) {
 	mock := mocks.GetMock(t)
 	mock.EXPECT().Errorf("Expected 'false' to be 'true'")
 
-	expectation := ExpectationBool{actual, Expectation{mock}}
+	sut := This(mock, actual)
 
-	expectation.ToBeTrue()
+	sut.ToBeTrue()
 }
 
 func TestToBeTruePassesWithTrue(t *testing.T) {
 	actual := true
 
-	expectation := ExpectationBool{actual, Expectation{t}}
+	sut := This(t, actual)
 
-	expectation.ToBeTrue()
+	sut.ToBeTrue()
 }
