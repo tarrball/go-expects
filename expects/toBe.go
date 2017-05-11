@@ -25,77 +25,16 @@ func (actual SUT) ToBe(expected interface{}) {
 	expectedValue := reflect.ValueOf(expected)
 
 	if !expectedType.ConvertibleTo(actualType) || !expectedValue.Type().ConvertibleTo(actualType) {
-		conversionFail(actual.testContext, actualType, expectedType)
+		ConversionFail(actual.testContext, actualType, expectedType)
 	} else if !reflect.DeepEqual(expectedValue.Convert(actualType).Interface(), actual.value) {
-		expectationFail(actual.testContext,
+		toBeFail(actual.testContext,
 			actualType,
 			actual.value,
 			expectedValue.Convert(actualType).Interface())
 	}
 }
 
-func conversionFail(t testContext, actualType reflect.Type, expectedType reflect.Type) {
-	switch actualType.Kind() {
-	case reflect.Int:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Int8:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Int16:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Int32:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Int64:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Uint:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Uint8:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Uint16:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Uint32:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Uint64:
-		t.Errorf("Could not convert actual type '%d' to expected type '%d'",
-			actualType,
-			expectedType)
-	case reflect.Bool:
-		t.Errorf("Could not convert actual type '%s' to expected type '%s'",
-			actualType,
-			expectedType)
-	case reflect.String:
-		t.Errorf("Could not convert actual type '%s' to expected type '%s'",
-			actualType,
-			expectedType)
-	case reflect.Float32:
-		t.Errorf("Could not convert actual type '%f' to expected type '%f'",
-			actualType,
-			expectedType)
-	case reflect.Float64:
-		t.Errorf("Could not convert actual type '%f' to expected type '%f'",
-			actualType,
-			expectedType)
-	}
-}
-
-func expectationFail(t testContext, objType reflect.Type, actual interface{}, expected interface{}) {
+func toBeFail(t testContext, objType reflect.Type, actual interface{}, expected interface{}) {
 	switch objType.Kind() {
 	case reflect.Int:
 		t.Errorf("Expected '%d' to be '%d'", actual, expected)
