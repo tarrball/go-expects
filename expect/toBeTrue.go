@@ -1,4 +1,4 @@
-package expects
+package expect
 
 import (
 	"reflect"
