@@ -2,4 +2,4 @@
 package goexpectations
 
 // need some real comments
-import _ "github.com/tarrball/go-expect/expect"
+import _ "github.com/tarrball/go-expect/expects"
