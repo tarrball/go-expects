@@ -12,8 +12,24 @@ func testThat(test func(*testing.T)) interface{} {
 
 // Test(t).If(true).Is(false).AndFail().WithReason("i hate you")
 
+type MockService struct{}
+
+func (r MockService) DoSomething(i int) {
+	println(string(i * 2))
+}
+
 func TestSomething(t *testing.T) {
-	Test(t).If(10).Is(10)
+	// Test(t).If(10).Is(10)
+
+	f := Factory{nil}
+	f.AddProxy(RealService{})
+
+	s1 := f.ResolveProxy()
+	s1.DoSomething(5)
+
+	f.AddProxy(MockService{})
+	s2 := f.ResolveProxy()
+	s2.DoSomething(5)
 }
 
 func TestToBeFloatMatchPasses(t *testing.T) {

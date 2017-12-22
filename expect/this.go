@@ -40,3 +40,25 @@ func (context TTest) Is(expected int) {
 		context.Errorf("You're a failure.")
 	}
 }
+
+type Factory struct {
+	service Service
+}
+
+type Service interface {
+	DoSomething(int)
+}
+
+type RealService struct{}
+
+func (r RealService) DoSomething(i int) {
+	println(string(i))
+}
+
+func (f Factory) AddProxy(s Service) {
+	f.service = s
+}
+
+func (f Factory) ResolveProxy() Service {
+	return f.service
+}
