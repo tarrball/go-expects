@@ -19,3 +19,24 @@ func ConversionFail(t testContext, actualType reflect.Type, expectedType reflect
 		actualType,
 		expectedType)
 }
+
+type TTest struct {
+	actual int
+	testContext
+}
+
+// Test does stuff
+func Test(t testContext) TTest {
+	return TTest{0, t}
+}
+
+func (context TTest) If(actual int) TTest {
+	context.actual = actual
+	return context
+}
+
+func (context TTest) Is(expected int) {
+	if context.actual != expected {
+		context.Errorf("You're a failure.")
+	}
+}

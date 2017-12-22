@@ -3,8 +3,18 @@ package expect
 import (
 	"testing"
 
-	"github.com/tarrball/go-expect/mocks"
+	"github.com/tarrball/gophertest/mocks"
 )
+
+func testThat(test func(*testing.T)) interface{} {
+	return test
+}
+
+// Test(t).If(true).Is(false).AndFail().WithReason("i hate you")
+
+func TestSomething(t *testing.T) {
+	Test(t).If(10).Is(10)
+}
 
 func TestToBeFloatMatchPasses(t *testing.T) {
 	actual, expected := 3.14, 3.14

@@ -3,7 +3,7 @@ package expect
 import (
 	"testing"
 
-	"github.com/tarrball/go-expect/mocks"
+	"github.com/tarrball/gophertest/mocks"
 )
 
 func TestToBeTrueFailsWithFalse(t *testing.T) {
