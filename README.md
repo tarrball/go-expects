@@ -16,12 +16,6 @@ I've created this little assertion package for two reasons:
 <br />
 
 # Step 2: Import
-`import "github.com/tarrball/gophertest/test"`
-
-Or if you're like me and you don't want to type the package name in each unit test:
-
-<br />
-
 `import . "github.com/tarrball/gophertest/test"`
 
 <br />
