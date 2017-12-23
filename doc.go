@@ -1,5 +1,5 @@
 // need some real comments
-package goexpectations
+package gophertest
 
 // need some real comments
-import _ "github.com/tarrball/go-expect/expect"
+import _ "github.com/tarrball/gophertest/test"
