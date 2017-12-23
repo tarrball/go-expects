@@ -36,7 +36,7 @@ I've created this little assertion package for two reasons:
 
 
 # On the Roadmap
-arrays, slices, maps, (ToContain, ToNotContain, etc)
+arrays, slices, maps, (Contains, DoesNotContain, etc)
 
 <br />
 
