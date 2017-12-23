@@ -16,17 +16,33 @@ I've created this little assertion package for two reasons:
 <br />
 
 # Step 2: Import
-`import github.com/tarrball/gophertest/expect`
+`import "github.com/tarrball/gophertest/test"`
+
+Or if you're like me and you don't want to type the package name in each unit test:
+
+<br />
+
+`import . "github.com/tarrball/gophertest/test"`
 
 <br />
 
 # Step 3: Use it (optional: _enjoy_)!
-It's supposed to be intuitive right? So how important could documentation _really_ be? Here's a little sample: 
+ 
+    package pkg
 
-TODO: an example.
+    import "testing"
+    import . "github.com/tarrball/gophertest/test"
+
+    func TestFoo(t *testing.T) {
+        actual := 5
+        expected := 5
+        
+        Test(t).If(actual).Is(expected)
+    }
+
 
 # On the Roadmap
-arrays, slices, maps, (ToContain, ToNotContain, ToBeNil, ToNotBeNil, etc)
+arrays, slices, maps, (ToContain, ToNotContain, etc)
 
 <br />
 
