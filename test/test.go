@@ -21,7 +21,7 @@ func (sut SUT) If(actual interface{}) SUT {
 
 // ConversionFail fails the test and outputs a message with the types
 func ConversionFail(t testContext, actualType reflect.Type, expectedType reflect.Type) {
-	t.Errorf("Could not convert actual type '%s' to expected type '%s'",
+	t.Errorf("Could not convert actual type '%s' to expected type '%s'.",
 		actualType,
 		expectedType)
 }
