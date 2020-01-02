@@ -34,10 +34,6 @@ I've created this little assertion package for two reasons:
         Test(t).If(actual).Is(expected)
     }
 
-
-# On the Roadmap
-arrays, slices, maps, (Contains, DoesNotContain, etc)
-
 <br />
 
 # Contact
